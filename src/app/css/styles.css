@@ -1,0 +1,38 @@
+.imgThumb {
+  width: 125px;
+  height: 200px;
+  margin: 20px;
+}
+
+.bookLarge {
+  width: 300px;
+  height: 500px;
+  margin: 35px;
+}
+
+.imgThumb:hover {
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+  opacity: 0.7;
+}
+
+.greyBar {
+  color: grey;
+}
+
+.redColor {
+  background-color: palevioletred;
+}
+
+.blueColor {
+  background-color: lightblue;
+}
+
+.yellowColor{
+  background-color: yellow;
+}
+
+.paddingDetails {
+  padding: 20px;
+}
