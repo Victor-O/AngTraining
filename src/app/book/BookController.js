@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('app').controller('BookController', function BookController($scope, bookData) {
+angular.module('app').controller('BookController', function BookController($scope, bookService) {
   $scope.vm = {};
   function success(books){
     console.log(books);
