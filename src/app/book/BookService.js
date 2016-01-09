@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').factory('bookData', function ($http, $q) {
+angular.module('app').factory('bookService', function ($http, $q) {
   return {
     getAll: function(){
       var defer = $q.defer();
