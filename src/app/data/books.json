@@ -1,42 +1,98 @@
 [
   {
+    "id" : 1,
     "name": "Mossad. Istoria sangeroasa a spionajului israelian",
     "author": "Michael Bar-Zohar",
     "year": "2015",
     "price": "35 Ron",
     "img": "./assets/images/mossad-istoria-sangeroasa.jpg",
-    "rating": "4/5"
+    "rating": "4/5",
+    "category" : "controversy",
+    "alreadyRead" : true,
+    "reviews" : []
   },
   {
+    "id" : 2,
     "name": "Podul spionilor. O poveste adevarata a razboiului rece",
     "author": "Giles Whittell ",
     "year": "2011",
     "price": "25 Ron",
     "img": "./assets/images/podul-spionilor.jpg",
-    "rating": "3/5"
+    "rating": "3/5",
+    "category" : "controversy",
+    "alreadyRead" : false,
+    "reviews" : []
   },
   {
+    "id" : 3,
     "name": "Confesiunile unui asasin economic",
     "author": "John Perkins",
     "year": "2010",
     "price": "27 Ron",
     "img": "./assets/images/confesiunile-unui-asasin-economic.jpg",
-    "rating": "4/5"
+    "rating": "4/5",
+    "category" : "controversy",
+    "alreadyRead" : false,
+    "reviews" : []
   },
   {
+    "id" : 4,
     "name": "Cavalerii templieri. Misterul dezvaluit",
     "author": "Alan Butler",
     "year": "2010",
     "price": "14 Ron",
     "img": "./assets/images/cavalerii-templieri.jpg",
-    "rating": "3/5"
+    "rating": "3/5",
+    "category" : "controversy",
+    "alreadyRead" : false,
+    "reviews" : []
   },
   {
+    "id" : 5,
     "name": "Jaful Romei",
     "author": "Alexander Stille",
     "year": "2011",
     "price": "29 Ron",
     "img": "./assets/images/jaful-romei.jpg",
-    "rating": "4/5"
+    "rating": "4/5",
+    "category" : "controversy",
+    "alreadyRead" : false,
+    "reviews" : []
+  },
+  {
+    "id" : 6,
+    "name": "Ghidul redactarii in Relatii Publice",
+    "author": "Merry Aronson",
+    "year": "2008",
+    "price": "28 Ron",
+    "img": "./assets/images/relatii-publice.jpg",
+    "rating": "4/5",
+    "category" : "business",
+    "alreadyRead" : false,
+    "reviews" : []
+  },
+  {
+    "id" : 7,
+    "name": "Rework",
+    "author": "David Heinemeier Hansson",
+    "year": "2011",
+    "price": "48 Ron",
+    "img": "./assets/images/rework.jpg",
+    "rating": "4/5",
+    "category" : "business",
+    "alreadyRead" : false,
+    "reviews" : []
+  },
+  {
+    "id" : 8,
+    "name": "Tehnici de a vinde",
+    "author": "Dale Carnegie",
+    "year": "2005",
+    "price": "31 Ron",
+    "img": "./assets/images/tehnici-de-a-vinde.jpg",
+    "rating": "4/5",
+    "category" : "business",
+    "alreadyRead" : false,
+    "reviews" : []
   }
 ]

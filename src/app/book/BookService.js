@@ -1,22 +1,25 @@
-'use strict';
+(function () {
 
-angular.module('app').factory('bookData', function ($http, $q) {
-  return {
-    getAll: function(){
-      var defer = $q.defer();
+  'use strict';
 
-      function success(response){
-          defer.resolve(response.data);
+  angular.module('app').factory('BookService', function ($http) {
+    return {
+      getBookById: function(id){
+        return $http({
+          method: "GET",
+          url: "http://localhost:5000/api/books/" + id
+        });
+      },
+
+      editBook: function(book){
+        return $http({
+          method: "PUT",
+          url: "http://localhost:5000/api/books/" + book.id,
+          data: book
+        });
       }
-      function error(response){
-        defer.reject(response.data);
-      }
 
-      var books = $http.get('app/data/books.json')
-        .then(success, error);
+    };
+  });
 
-      return defer.promise;
-    }
-
-  };
-});
+})();

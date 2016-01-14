@@ -6,21 +6,23 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
-
-  <link rel="stylesheet" href="../src/app/css/styles.css">
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
   <!-- bower:css -->
-  <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css" />
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:css({.tmp/serve,src}) styles/app.css -->
   <!-- inject:css -->
-  <!-- css files will be automatically insert here -->
+  <link rel="stylesheet" href="/.tmp/styles.css">
   <!-- endinject -->
   <!-- endbuild -->
+
+
 </head>
 <body>
 <!--[if lt IE 10]>
@@ -28,39 +30,58 @@
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div ng-controller="BookController">
-
+<div>
   <div class="navbar navbar-default">
+    <a class="btn btn-info btn-lg" ui-sref="library">Library</a>
     <button class="btn btn-info btn-lg pull-right">Logout</button>
   </div>
 
-  <div ng-if="vm.selectedBook">
-    <selected-book book="vm.selectedBook"></selected-book>
+
+  <div class="row" ng-controller="WishlistController">
+    <button class="btn btn-success btn-lg pull-right" ng-click="openWishlist($event)">WishList</button>
   </div>
 
-  <div class="text-center">
-    <div>
-      <h3>Lista carti:</h3>
-    </div>
-    <div class="row">
-      <span ng-repeat="book in books track by $index">
-        <img class="imgThumb" ng-src="{{book.img}}" ng-click="selectBook(book)">
-      </span>
-    </div>
-  </div>
+  <div ui-view></div>
+
+
+
 </div>
 
-<div ng-view></div>
+
 
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->
-<!-- run `gulp inject` to automatically populate bower script dependencies -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-touch/angular-touch.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-aria/angular-aria.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/angular-material/angular-material.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/malarkey/dist/malarkey.min.js"></script>
+<script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
 <!-- inject:js -->
-<!-- js files will be automatically insert here -->
+<script src="/src/app/app.js"></script>
+<script src="/src/app/book/BookController.js"></script>
+<script src="/src/app/book/BookDirective.js"></script>
+<script src="/src/app/book/BookService.js"></script>
+<script src="/src/app/library/LibraryController.js"></script>
+<script src="/src/app/library/LibraryService.js"></script>
+<script src="/src/app/wishlist/WishlistController.js"></script>
+<script src="/src/app/wishlist/WishlistService.js"></script>
 <!-- endinject -->
 
 <!-- inject:partials -->
@@ -68,14 +89,7 @@
 <!-- endinject -->
 <!-- endbuild -->
 
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
 
-
-<script src="app/index.module.js"></script>
-<script src="app/book/BookController.js"></script>
-<script src="app/book/BookService.js"></script>
-<script src="app/book/BookDirective.js"></script>
 
 </body>
 </html>

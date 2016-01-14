@@ -1,12 +1,49 @@
 <div class="container-fluid">
-  <div class="col-lg-4">
+  <div ng-controller="WishlistController" class="col-lg-1">
+    <img src="../src/assets/images/add.png" style="margin-top: 100px" class="pull-right imgThumb"
+         title="Add to wishlist" ng-click="addToWishlist(book)">
+  </div>
+  <div class="col-lg-3">
     <img ng-src="{{book.img}}" class="bookLarge pull-right">
   </div>
-  <div class="col-lg-6" style="padding-top: 100px">
+  <div class="col-lg-6" style="padding-top: 20px">
+    <span ng-controller="BookController">
+    <button class="btn btn-danger" ng-click="bookRead(book)">Citita <i class="glyphicon glyphicon-ok"></i></button>
+      </span>
     <h3 class="redColor paddingDetails">Book name: {{book.name}}</h3>
     <h3 class="blueColor paddingDetails">Author: {{book.author}}</h3>
     <h3 class="redColor paddingDetails">Price: {{book.price}}</h3>
     <h3 class="blueColor paddingDetails">Year of printing: {{book.year}}</h3>
     <h4 class="yellowColor paddingDetails">Rating: {{book.rating}}</h4>
+    <br>
+    Recenzie:
+    <form ng-controller="BookController">
+      <textarea ng-model="txtComment" placeholder="Your Comment" style='width:550px'></textarea>
+      <button ng-click='btn_add(book);' style='margin-top:10px;'>Post Comment</button>
+
+      <h4>Comments</h4>
+      <ul>
+        <li ng-repeat="review in book.reviews">
+
+          <div class="row">
+            <div class="col-xs-3">
+              <div ng-click="upVote(book, review)">
+                <i class="glyphicon glyphicon-chevron-up"></i>
+              </div>
+              <div class="badge badge-inverse">
+                {{review.votes}}
+              </div>
+              <div ng-click="downVote(book, review)">
+                <i class="glyphicon glyphicon-chevron-down"></i>
+              </div>
+            </div>
+
+            <div class="col-xs-3">{{ review.text }} <a style="float: right;" href=""
+                                                       ng-click="remItem($index, book)">x</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </form>
   </div>
 </div>

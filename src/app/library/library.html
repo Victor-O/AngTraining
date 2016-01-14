@@ -1,0 +1,35 @@
+<div>
+
+  <div class="text-center">
+    <div>
+      <h3>Lista carti:</h3>
+    </div>
+    Categorie:
+    <select ng-model="filtru.category" class="input-sm">
+      <option selected value="">Toate</option>
+      <option selected value="controversy">Controversy</option>
+      <option selected value="business">Business</option>
+    </select>
+    <br>
+    <br>
+    Cauta :
+    <input type="text" ng-model="search" ng-model-options="{debounce: 400}">
+    <div class="row">
+      <span ng-repeat="book in books | filter:filtru | filter:search track by $index" ng-if="!book.alreadyRead">
+        <img class="imgThumb" ng-src="{{book.img}}"  ui-sref="book({id:book.id})">
+      </span>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <h3>Carti citite:</h3>
+    <div class="row">
+      <span ng-repeat="book in books | filter:filtru | filter:search track by $index" ng-if="book.alreadyRead">
+        <img class="imgThumb" ng-src="{{book.img}}" ui-sref="book({id:book.id})">
+      </span>
+    </div>
+  </div>
+
+</div>
