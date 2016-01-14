@@ -1,6 +1,13 @@
 (function () {
 
+<<<<<<< HEAD
   'use strict';
+=======
+angular.module('app').factory('bookService', function ($http, $q) {
+  return {
+    getAll: function(){
+      var defer = $q.defer();
+>>>>>>> origin/master
 
   angular.module('app').factory('BookService', function ($http) {
     return {
