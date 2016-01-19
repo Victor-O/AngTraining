@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('app').controller('BookController', function BookController($scope, BookService, $stateParams) {
+  angular.module('app').controller('BookController', function BookController($scope, BookService, $stateParams, $localStorage, jwtHelper,LibraryService) {
     $scope.vm = {};
     $scope.books = [];
     $scope.book = {};
@@ -38,6 +38,17 @@
     };
 
     $scope.upVote = function (book, review) {
+
+      var tokenPayload = jwtHelper.decodeToken($localStorage.token);
+      console.log(tokenPayload);
+
+      var date = jwtHelper.getTokenExpirationDate($localStorage.token);
+      console.log(date);
+
+      var bool = jwtHelper.isTokenExpired($localStorage.token);
+      console.log(bool);
+
+
       var toBeUpdated = _.findIndex(book.reviews, {'id': review.id});
       if (toBeUpdated !== -1) {
         review.votes++;
@@ -57,7 +68,12 @@
       book.alreadyRead = !book.alreadyRead;
       BookService.editBook(book)
         .then(function (response) {
-          getAllBooks();
+
+          LibraryService.getBooks($stateParams)
+            .then(function (res) {
+              $scope.books = res.data;
+            });
+
         }, function (res) {
           console.log(res);
         });

@@ -1,0 +1,6 @@
+<div class="navbar navbar-default">
+  <a class="btn btn-info btn-lg" ui-sref="login">Login</a>
+  <a class="btn btn-info btn-lg" ui-sref="library">Library</a>
+    <span> Logged in as: <span ng-show="vm.loggedUser">{{vm.loggedUser.firstName}}</span>
+    <button class="btn btn-danger btn-lg pull-right" ng-click="vm.logOut()">Logout</button></span>
+</div>
