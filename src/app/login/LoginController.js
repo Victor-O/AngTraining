@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('app').controller('LoginController', function LoginController($scope, $state, $stateParams, LoginService, $localStorage) {
+  angular.module('app').controller('LoginController', function LoginController($scope, $state, $stateParams, LoginService, $localStorage, AuthenticationService) {
 
     $scope.vm = {};
     $scope.incorrect = false;
@@ -34,6 +34,7 @@
           $localStorage.token = res.data.token;
           $localStorage.loggedAlready = true;
           $scope.loggedAlready = true;
+          AuthenticationService.isLogged = true;
 
           $state.go('library');
         });

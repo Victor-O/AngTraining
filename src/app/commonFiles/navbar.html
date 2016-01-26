@@ -1,6 +1,10 @@
 <div class="navbar navbar-default">
   <a class="btn btn-info btn-lg" ui-sref="login">Login</a>
-  <a class="btn btn-info btn-lg" ui-sref="library">Library</a>
-    <span> Logged in as: <span ng-show="vm.loggedUser">{{vm.loggedUser.firstName}}</span>
-    <button class="btn btn-danger btn-lg pull-right" ng-click="vm.logOut()">Logout</button></span>
+  <span ng-controller="SignUpController">
+  <button class="btn btn-success btn-lg" ng-click="registerDialog($event)" ng-hide="isLogged">Sign Up</button>
+    </span>
+  <a class="btn btn-info btn-lg" ui-sref="library" ng-show="isLogged">Library</a>
+
+  <span> Logged in as: <span ng-show="vm.loggedUser">{{vm.loggedUser.firstName}}</span></span>
+  <button class="btn btn-danger btn-lg pull-right" ng-click="vm.logOut()" ng-show="isLogged">Logout</button>
 </div>

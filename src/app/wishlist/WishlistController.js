@@ -16,7 +16,6 @@
 
     $scope.openWishlist = function ($event) {
       var parentEl = angular.element(document.body);
-      debugger;
       $mdDialog.show({
         parent: parentEl,
         targetEvent: $event,
